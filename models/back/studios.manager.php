@@ -34,9 +34,9 @@ class StudiosManager extends Model{
     }
 
     public function verificationExistenceInstrumentStudio($idInstrument,$idStudio){ //la fonction permet de tester si le nombre de ligne > 0, alors la ligne est bien présente en bdd
-        $req ="Select count(*) as 'nb'
-        from instrument_studio istud
-        where istud_instrument_id = :idInstrument and istud_studioId = :idStudio";
+        $req = "SELECT count(*) as 'nb'
+        from instrument_studio
+        where instrument_id = :idInstrument and studio_id = :idStudio";
         $stmt = $this->getBdd()->prepare($req);
         $stmt->bindValue(":idInstrument",$idInstrument,PDO::PARAM_INT);
         $stmt->bindValue(":idStudio",$idStudio,PDO::PARAM_INT);

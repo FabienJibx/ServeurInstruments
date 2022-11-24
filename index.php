@@ -60,7 +60,9 @@ try{
                                 break;
                                 case "validationSuppression" : $familysController->suppression();
                                 break;
-                                case "validationModification" : $familysController->modification();
+                                case "modificationFamily": $familysController->modificationFamily();
+                                break;
+                                case "validationModification": $familysController->modification();
                                 break;
                                 case "creation" :$familysController->creationTemplate();
                                 break;

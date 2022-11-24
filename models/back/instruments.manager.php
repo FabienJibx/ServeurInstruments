@@ -31,7 +31,7 @@ class InstrumentsManager extends Model{
     
     public function updateInstrument($idInstrument,$nom,$description,$image,$family){
         $req ="Update instrument
-        set instrument_nom = :nom, instrument_description = :description, instrument_image = :image, family_id = :famille
+        set instrument_nom = :nom, instrument_description = :description, instrument_image = :image, family_id = :family
         where instrument_id= :idInstrument";
         $stmt = $this->getBdd()->prepare($req);
         $stmt->bindValue(":idInstrument",$idInstrument,PDO::PARAM_INT);

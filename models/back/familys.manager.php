@@ -12,6 +12,17 @@ class FamilysManager extends Model{
         return $familys;
     }
 
+    public function getFamily($id)
+    {
+        $req = "SELECT * from family WHERE family_id=:id";
+        $stmt = $this->getBdd()->prepare($req);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        $family = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $family;
+    }
+
     public function deleteDBfamily($idFamily){
         $req ="Delete from family where family_id= :idFamily";
         $stmt = $this->getBdd()->prepare($req);

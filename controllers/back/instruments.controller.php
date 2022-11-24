@@ -126,9 +126,9 @@ class InstrumentsController{
 
             $studios = [
                 1 => !empty($_POST['studio-1']),
-                1 => !empty($_POST['studio-2']),
-                1 => !empty($_POST['studio-3']),
-                1 => !empty($_POST['studio-4']),
+                2 => !empty($_POST['studio-2']),
+                3 => !empty($_POST['studio-3']),
+                4 => !empty($_POST['studio-4']),
             ];
 
             foreach ($studios as $key => $studio) {

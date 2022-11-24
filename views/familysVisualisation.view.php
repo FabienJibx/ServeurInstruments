@@ -17,7 +17,7 @@
                     <td><?= $family['family_libelle'] ?></td>
                     <td><?= $family['family_description'] ?></td>
                     <td>
-                        <form method="post" action="">
+                        <form method="post" action="<?= URL ?>back/familles/modificationFamily">
                             <input type="hidden" name="family_id" value="<?= $family['family_id'] ?>" />   
                             <button class="btn btn-warning" type="submit">Modifier</button>
                         </form>

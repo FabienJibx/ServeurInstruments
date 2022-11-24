@@ -59,6 +59,17 @@ class FamilysController{
         }
     }
 
+    public function modificationFamily()
+    {
+        if (Securite::verifAccessSession()) {
+            $id = (int) Securite::secureHTML($_POST['family_id']);
+            $family = $this->familysManager->getFamily($id);
+            require_once "views/family-form.view.php";
+        } else {
+            throw new Exception("Vous n'avez pas le droit d'être là ! ");
+        }
+    }
+
     public function creationTemplate(){
         if(Securite::verifAccessSession()){
             require_once "views/familyCreation.view.php";
